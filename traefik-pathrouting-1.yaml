@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  name: traefik-pathrouting-1
+  namespace: sample-domain1-ns
+spec:
+  routes:
+  - kind: Rule
+    match: PathPrefix(`/management`)
+    services:
+    - kind: Service
+      name: sample-domain1-admin-server
+      namespace: sample-domain1-ns
+      port: 7001
