@@ -8,7 +8,7 @@ metadata:
 spec:
   routes:
   - kind: Rule
-    match: PathPrefix(`/management`)
+    match: PathPrefix(`/`)
     services:
     - kind: Service
       name: sample-domain1-admin-server
